@@ -27,6 +27,9 @@ jobs:
       - name: Run tests with coverage
         run: npm run test
 
+      - name: Install SonarScanner
+        run: npm install -g sonar-scanner
+
       - name: SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
