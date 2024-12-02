@@ -41,7 +41,7 @@ jobs:
       # SonarCloud analysis
       - name: SonarCloud Scan
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ vars.SONAR_TOKEN }}
         run: |
           npm install -g sonar-scanner
           sonar-scanner -X
