@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline with SonarCloud
 
 on:
   push:
@@ -13,20 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Verificar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      # Instalar dependencias
       - name: Install dependencies
         run: npm install
 
-      # Ejecutar pruebas
       - name: Run tests
         run: npm test
+
+      # SonarCloud analysis
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          npm install -g sonar-scanner
+          sonar-scanner
