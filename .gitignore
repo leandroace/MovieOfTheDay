@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Ignorar cobertura de código
+coverage/
+
 # Env
 .env
