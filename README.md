@@ -48,19 +48,19 @@ Kubectl
 
 Clona este repositorio:
 
--git clone https://github.com/tu-usuario/tu-repositorio.git
--cd tu-repositorio
+- git clone
+- cd tu-repositorio
 
 Instala las dependencias del proyecto:
 
--npm install
+- npm install
 
 Crea un archivo .env con las variables necesarias.
 
 Construye la imagen Docker:
--docker build -t my-app:latest .
--docker run -p 3000:3000 my-app:latest
+- docker build -t my-app:latest .
+- docker run -p 3000:3000 my-app:latest
 
 Despliegue en Kubernetes
 
--kubectl apply -f deployment.yaml
+- kubectl apply -f deployment.yaml
